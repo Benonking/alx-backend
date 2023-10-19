@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 
 '''
-simple helper function to a tuple, containg parameters
+simple helper function to return a tuple
 
 '''
 
 
 def index_range(page, page_size):
+    '''
+    caltulate startIndex and endIndex of page
+    Args:
+        page: file size
+        page_size: pagnated page size
+    '''
     if page <= 0 or page_size <= 0:
         return None
 
