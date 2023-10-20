@@ -43,7 +43,7 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         '''
         Get page based on start index and end index
-        Args: 
+        Args:
             page:startIndex of page in dataset
             page_size: page_size index
         '''
