@@ -66,8 +66,8 @@ class Server:
         results = {}
         results['page_size'] = page_size
         results['page'] = page
-        results['data'] = self.get_page(page= page, page_size= page_size)
-        if (self.index_range(page, page_size)[0] > 0):
+        results['data'] = self.get_page(page, page_size)
+        if (page-1 >= 1):
             results['next_page']: page + 1
         else:
             return None
