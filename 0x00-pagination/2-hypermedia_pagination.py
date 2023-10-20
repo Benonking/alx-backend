@@ -44,15 +44,15 @@ class Server:
             return []
         results = self.index_range(page, page_size)
         return self.dataset()[results[0]: results[1]]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-            results = {}
-            if(self.index_range(page, page_size)[1] < len(self.dataset()) ):
-                results['prev_page'] = page + 1
-            if (self.index_range(page, page_size)[0] > 0):
-                results.next_page: page +1
-            results['totol_pages'] = len(self.dataset())
-            results['data'] = self.get_page(page, page_size)
-            results['page'] = page
-            results['page_size'] = page_size
-            return results
+        results = {}
+        if (self.index_range(page, page_size)[1] < len(self.dataset())):
+            results['prev_page'] = page + 1
+        if (self.index_range(page, page_size)[0] > 0):
+            results.next_page: page + 1
+        results['totol_pages'] = len(self.dataset())
+        results['data'] = self.get_page(page, page_size)
+        results['page'] = page
+        results['page_size'] = page_size
+        return results
