@@ -51,7 +51,7 @@ class Server:
             results['prev_page'] = page + 1
         if (self.index_range(page, page_size)[0] > 0):
             results.next_page: page + 1
-        results['totol_pages'] = len(self.dataset())
+        results['total_pages'] = len(self.dataset())
         results['data'] = self.get_page(page, page_size)
         results['page'] = page
         results['page_size'] = page_size

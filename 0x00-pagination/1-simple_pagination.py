@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+'''
+Module Implemt get_page to get paginated page
+'''
 import csv
 import math
 from typing import List, Tuple
@@ -37,6 +41,12 @@ class Server:
         return (startIndex, endIndex)
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        '''
+        Get page based on start index and end index
+        Args: 
+            page:startIndex of page in dataset
+            page_size: page_size index
+        '''
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
