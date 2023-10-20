@@ -73,7 +73,7 @@ class Server:
         else:
             results['next_page'] = None
         # total pages is number of rows/ page_size
-        if (page -1 >= 1):
+        if (page - 1 >= 1):
             results['prev_page'] = page - 1
         else:
             results['prev_page'] = None
