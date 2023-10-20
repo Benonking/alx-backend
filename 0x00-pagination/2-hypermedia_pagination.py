@@ -37,6 +37,12 @@ class Server:
         return (startIndex, endIndex)
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        '''
+        Get page based on start index and end index
+        Args:
+            page:startIndex of page in dataset
+            page_size: page_size index
+        '''
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
@@ -46,6 +52,13 @@ class Server:
         return self.dataset()[results[0]: results[1]]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+        '''
+        Implement function to perform Hypermedia pagination
+        Args:
+            page: start index
+            page-size: endIndex
+        Return: Dictionary of atrributes
+        '''
         results = {}
         if (self.index_range(page, page_size)[1] < len(self.dataset())):
             results['prev_page'] = page + 1
