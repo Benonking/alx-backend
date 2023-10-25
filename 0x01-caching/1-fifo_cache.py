@@ -21,7 +21,8 @@ class FIFOCache(BaseCaching):
 
     def put(self, key, item):
         '''
-        add item to cache or remove first input item if length of dict exceeds MAX_LIMIT
+        add item to cache or remove first input item if
+            length of dict exceeds MAX_LIMIT
         '''
         if key is None or item is None:
             return
