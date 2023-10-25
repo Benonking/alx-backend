@@ -25,6 +25,8 @@ class BasicCache (BaseCaching):
         '''
         if key is None or item is None:
             pass
+        elif type(key) not in [str]:
+            raise Exception(f"{key} must be string")
         else:
             self.cache_data[key] = item
 
