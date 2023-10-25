@@ -2,6 +2,7 @@
 '''
 BaseCaching Module
 '''
+
 BaseCaching = __import__('BaseCaching').BaseCaching
 
 
@@ -11,24 +12,15 @@ class BasicCache (BaseCaching):
     put -> add item to cache
             get -> get item from cache
     '''
-
-    def __init__(self):
-        '''
-        initialisse super class in child class
-        '''
-        super().__init__()
-
     # super self.cache_data
     def put(self, key, item):
         '''
         add item to cache dictionary
         '''
         if key is None or item is None:
-            pass
-        elif type(key) not in [str]:
-            raise Exception(f"{key} must be string")
-        else:
-            self.cache_data[key] = item
+            return
+       
+        self.cache_data[key] = item
 
     def get(self, key):
         '''
