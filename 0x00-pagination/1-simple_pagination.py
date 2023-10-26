@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-Module Implemt get_page to get paginated page
+Module Implement get_page to get paginated page
 '''
 import csv
 import math
@@ -8,7 +8,10 @@ from typing import List, Tuple
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """Server class implements methods
+        dataset -> returns dataset to be paginated
+        index_range -> calculate the start and end index for pagination
+        get_page -> get a page from dataset given parameters
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 

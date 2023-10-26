@@ -8,8 +8,12 @@ from typing import List, Tuple, Dict
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
-    """
+    """Server class implements methods
+        dataset -> returns dataset to be paginated
+        index_range -> calculate the start and end index for pagination
+        get_page -> get a page from dataset given parameters
+        get_hyper -> returns a dictionary of pagination atrritubutes
+        """
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
@@ -64,16 +68,17 @@ class Server:
         Return: Dictionary of atrributes
         '''
         results = {}
+        startIndex, EndIndex = self.index_range(page, page_size)
         results['page_size'] = page_size
         results['page'] = page
         results['data'] = self.get_page(page, page_size)
 
-        if (math.ceil(len(self.dataset())) / page_size >= 1):
+        if ((EndIndex) < math.ceil(len(self.dataset()))):
             results['next_page'] = page + 1
         else:
             results['next_page'] = None
         # total pages is number of rows/ page_size
-        if (page - 1 >= 1):
+        if (startIndex > 0):
             results['prev_page'] = page - 1
         else:
             results['prev_page'] = None
