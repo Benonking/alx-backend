@@ -5,10 +5,11 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def dell():
-    title = "Welcome to Holberton"
+def hello():
+    '''index page'''
+    
     h1 = "Hello World"
-    return render_template('0-index.html', title=title, h1=h1)
+    return render_template('0-index.html')
 
 
 if __name__ == "__main__":
