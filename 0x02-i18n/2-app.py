@@ -24,7 +24,8 @@ app.url_map.strict_slashes = False
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
+    '''retrieve locale for web page'''
     return request.accept_languages.best_match(Config.LANGUAGES)
 
 
