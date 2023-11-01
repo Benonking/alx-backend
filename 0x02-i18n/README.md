@@ -1,1 +1,1 @@
-# Handle Tasilations (i18n)
+# Handle Translations (i18n)
