@@ -25,7 +25,7 @@ app.url_map.strict_slashes = False
 
 @babel.localeselector
 def get_locale():
-    return request.accept_languages.best_match(Config.LANGUAGES)
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route("/", strict_slashes=False)
