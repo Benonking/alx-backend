@@ -62,7 +62,7 @@ jobs.forEach((item) => {
 	jobQueue.on('failed', (err) =>{
 		console.log(`Notification job ${jobQueue.id} failed: ${err}`);
 	});
-	jobQueue.on('progess', (progress) => {
+	jobQueue.on('progress', (progress) => {
 		console.log(`Notification job ${jobQueue.id} ${progress}% complete`)
 	});
 });
